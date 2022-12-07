@@ -375,24 +375,8 @@ gaps inner 10
 font pango:Sans 12
 # font pango:SourceCodePro Medium 11
 
-
-
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
+# Status Bar
 bar {
-    # position top
-
-    # # When the status_command prints a new line to stdout, swaybar updates.
-    # # The default just shows the current date and time.
-    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    # colors {
-    #     statusline #ffffff
-    #     background #323232
-    #     inactive_workspace #32323200 #32323200 #5c5c5c
-    # }
     swaybar_command waybar
 }
 
@@ -400,21 +384,25 @@ bar {
 
 # screen sharing in chrome
 # https://github.com/emersion/xdg-desktop-portal-wlr#running
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK DBUS_SESSION_BUS_ADDRESS XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK DBUS_SESSION_BUS_ADDRESS
-# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK DBUS_SESSION_BUS_ADDRESS XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
+# exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK DBUS_SESSION_BUS_ADDRESS
+
 exec --no-startup-id redshift -c ~/.config/redshift/config
 # workspace $wsF12
 # exec spotify
 workspace $wsF1
-exec signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland
+# exec signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland
+exec gtk-launch signal-desktop
 workspace $ws2
 exec $term -e tmux
 workspace $ws1
 
 # exec google-chrome-beta --enable-features=UseOzonePlatform --ozone-platform=wayland
 # exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --ignore-gpu-blocklist --enable-accelerated-video-decode --enable-gpu-rasterization --enable-oop-rasterization --enable-zero-copy --use-gl=egl --enable-features=VaapiVideoDecoder
-exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
+# exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
+exec gtk-launch google-chrome-beta
 
 workspace $ws1 output eDP-1
 workspace $ws2 output eDP-1

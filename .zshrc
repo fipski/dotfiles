@@ -27,7 +27,8 @@ plugins=(archlinux
 	bundler 
 	docker 
 	jsontools 
-	vscode web-search 
+	vscode
+    web-search 
 	# tig 
 	gitfast 
 	vi-mode
@@ -43,21 +44,22 @@ plugins=(archlinux
 source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# source $ZSH/oh-my-zsh.sh
+# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 bindkey  "^[[1~"   beginning-of-line
 bindkey  "^[[4~"   end-of-line
 
 # alias sway="WLR_NO_HARDWARE_CURSORS=1 sway > /var/log/sway.log 2>&1"
-alias sway="sway > /var/log/sway.log 2>&1"
+
+alias sway="LIBVA_DRIVER_NAME=radeonsi sway > /var/log/sway.log 2>&1"
 alias sc="systemctl"                                                           
 alias iftop='export NCURSES_NO_UTF8_ACS=1 && iftop $@'                         
 # alias tmux='TERM=screen-256color tmux'
