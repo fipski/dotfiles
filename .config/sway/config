@@ -243,7 +243,9 @@ bindsym $mod+F12 workspace $wsF12
 # exec "(pidof spotify 1>/dev/null &&)||spotify &&"
 # showkey keyid +8
 bindcode 452 exec $notepad
+bindsym $mod+n exec $notepad
 bindcode 642 exec $snippingtool
+bindcode 149 exec $snippingtool
 
 # move focused container to workspace
 bindsym $mod+Shift+1    move container to workspace $ws1
@@ -393,8 +395,8 @@ exec --no-startup-id redshift -c ~/.config/redshift/config
 # workspace $wsF12
 # exec spotify
 workspace $wsF1
-# exec signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland
-exec gtk-launch signal-desktop
+exec signal-desktop --use-tray-icon --start-in-tray --enable-features=UseOzonePlatform --ozone-platform=wayland
+# exec gtk-launch signal-desktop
 workspace $ws2
 exec $term -e tmux
 workspace $ws1
