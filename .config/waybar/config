@@ -47,7 +47,7 @@
         "format-icons": {
             // 📶
             // "wifi": ["", "" ,""],
-            "wifi": [""],
+            "wifi": ["󰢿","󰢼", "󰢽", "󰢾"],
             "ethernet": [""],
             "wwan": [""], //TODO
             "disconnected": [""]
@@ -61,7 +61,7 @@
         "format": "{volume} {icon}",
         "format-alt-click": "click-right",
         // 🔇 🔈 🔉 🔊
-        "format-muted": "",
+        "format-muted": "󰝟",
         "format-icons": {
             "phone": [" ", " ", " "],
             "headphone": [" ", " ", " "],
@@ -96,27 +96,27 @@
         "format-alt": "{icon}",
         "format": "{percent} {icon}",
         "format-alt-click": "click-right",
-        "format-icons": [""],
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
         //"format-icons": ["",  ""],
         //"format-icons": ["", ""],
         "on-scroll-down": "light -A 1",
         "on-scroll-up": "light -U 1"
     },
-    "custom/weather": {
-        "format": "{}",
-        "format-alt": "{alt}: {}",
-        "format-alt-click": "click-right",
-        "interval": 1800,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/weather.sh",
-        "exec-if": "ping wttr.in -c1"
-    },
+    //"custom/weather": {
+    //    "format": "{}",
+    //    "format-alt": "{alt}: {}",
+    //    "format-alt-click": "click-right",
+    //    "interval": 1800,
+    //    "return-type": "json",
+    //    "exec": "~/.config/waybar/modules/weather.sh",
+    //    "exec-if": "ping wttr.in -c1"
+    //},
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             /*  🔒🔓 */
-            "activated": "",
-            "deactivated": ""
+            "activated": "󱫧",
+            "deactivated": "󱫑"
             /* "activated": "", */
             /* "deactivated": "" */
         },

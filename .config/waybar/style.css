@@ -1,9 +1,17 @@
 * {
     border:        none;
     border-radius: 0;
+    /* testing fonts, weird stuff */
     /* font-family: Roboto, Helvetica, sans-serif, "Font Awesome 5 Free Solid", "Font Awesome 5 Brands"; */
     /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
-    font-family: Roboto, Helvetica, sans-serif, "Font Awesome 5 Free Solid", "Font Awesome 5 Brands";
+    /* font-family: Roboto, Helvetica, sans-serif, "Font Awesome 5 Free Solid", "Font Awesome 5 Brands"; */
+    /* font-family: "Nerd Font Hack"; */
+    /* font-family: "Nerd Font Hack"; */
+    /* font-family: "DroidSansMono Nerd Font"; */
+    /* font-family: "Hack Nerd Font", sans-serif; */
+
+    /* needs ttf-noto-nerd */
+    font-family:  "NotoSans Nerd Font";
     font-size:     15px;
     box-shadow:    none;
     text-shadow:   none;
@@ -56,8 +64,8 @@ button:hover {
 #mode, #backlight, #idle_inhibitor, #language, #pulseaudio, #network, #memory, #temperature, #battery, #clock, #tray, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
     /* color:      rgb(128,128,128); */
     min-width:  40px;
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-right: 7px;
+    padding-left: 7px;
     /* margin-top: 5px; */
     /* margin-bottom: 5px; */
     /* border-right: 2px solid rgba(255,255,255, 0.4);  */
