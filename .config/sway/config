@@ -19,10 +19,7 @@ set $term alacritty
 set $lock ~/.local/bin/scripts/lock.sh
 # snipping tool
 set $snippingtool 'grim -g "$(slurp)" - | swappy -f -'
-set $notepad "alacritty -t 263ebf09-23ec-411c-981e-9e7728edb35a -e vim -p ~/notes/*"
-
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
+set $notepad "alacritty -t 263ebf09-23ec-411c-981e-9e7728edb35a -e nvim -p ~/notes/*"
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu dmenu_path | wofi --allow-images --show drun -i | xargs swaymsg exec --
@@ -117,6 +114,7 @@ input type:touch map_to_output DP-1
 
     # Kill focused window
     bindsym $mod+Shift+q kill
+    bindsym Alt+F4 kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -183,8 +181,7 @@ set $ws8   8:8
 set $ws9   9:9
 set $ws0   10:10
 set $wsF1  11:
-set $wsF2  12:
-# set $wsF2  12:
+set $wsF2  12:󰙯
 set $wsF3  13:13
 set $wsF4  14:14
 set $wsF5  15:15
@@ -196,24 +193,22 @@ set $wsF10 20:20
 set $wsF11 21:
 set $wsF12 22:
 
+
 # Default workspaces for common programs
-#assign [class="^Google-chrome$"] workspace $ws1
-# assign [class="^code-oss$"] $ws2
-# assign [class="^Signal$"] workspace $wsF1
-# assign [class="^Riot$"] $wsF1
-# assign [class="^Mailspring$"] $wsF2
-# assign [app_id="virt-manager"] $wsF8
-# assign [class="^KeePass2$"] $wsF11
-#assign [class="^Spotify$"] $wsF12
 assign [app_id="^Signal$"] workspace $wsF1
-assign [app_id="Signal"] workspace $wsF1
+assign [app_id="signal"] workspace $wsF1
 # assign [class="Google-chrome"] workspace $ws1
 assign [class="Spotify"] workspace $wsF12
-assign [class="^Spotify$"] $wsF12
+assign [class="^Spotify$"] workspace $wsF12
+assign [class="^Discord$"] workspace $wsF12
 
 for_window [title="nm_tui_win"] floating enable
 for_window [title="263ebf09-23ec-411c-981e-9e7728edb35a"] floating enable
-for_window [title="Spotify Premium"] move to workspace $wsF12
+
+for_window [title="Spotify"] move to workspace $wsF12
+for_window [title="Signal"] move to workspace $wsF1
+for_window [class="^discord$"] workspace $wsF2
+
 for_window [shell="^((?!xdg_shell).)*$"] title_format "%title :: %shell"
 for_window [app_id="discord"] move to workspace $wsF2
 
@@ -241,11 +236,12 @@ bindsym $mod+F10 workspace $wsF10
 bindsym $mod+F11 workspace $wsF11
 bindsym $mod+F12 workspace $wsF12
 # exec "(pidof spotify 1>/dev/null &&)||spotify &&"
-# showkey keyid +8
-bindcode 452 exec $notepad
-bindsym $mod+n exec $notepad
-bindcode 642 exec $snippingtool
-bindcode 149 exec $snippingtool
+
+# figure out key names with
+# xev -event keyboard  | egrep -o 'keycode.*\)'
+bindsym XF86Launch2 exec $snippingtool
+bindsym XF86Messenger exec $notepad
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1    move container to workspace $ws1
