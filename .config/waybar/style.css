@@ -1,101 +1,103 @@
 * {
-    border:        none;
-    border-radius: 0;
-    /* testing fonts, weird stuff */
-    /* font-family: Roboto, Helvetica, sans-serif, "Font Awesome 5 Free Solid", "Font Awesome 5 Brands"; */
-    /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
-    /* font-family: Roboto, Helvetica, sans-serif, "Font Awesome 5 Free Solid", "Font Awesome 5 Brands"; */
-    /* font-family: "Nerd Font Hack"; */
-    /* font-family: "Nerd Font Hack"; */
-    /* font-family: "DroidSansMono Nerd Font"; */
-    /* font-family: "Hack Nerd Font", sans-serif; */
-
-    /* needs ttf-noto-nerd */
-    font-family:  "NotoSans Nerd Font";
-    font-size:     15px;
-    box-shadow:    none;
-    text-shadow:   none;
-    transition-duration: 0s;
-    color: rgb(210,210,210);
+  border:        none;
+  border-radius: 0;
+  /* font-family: Roboto, Helvetica, sans-serif, "Font Awesome 5 Free Solid", "Font Awesome 5 Brands"; */
+  /* font-family:   Sans; */
+  font-family: "NotoSans Nerd Font";
+  font-size:     15px;
+  padding-top: 0px;
+  margin-top: 0px;
+  box-shadow:    none;
+  text-shadow:   none;
+  transition-duration: 0s;
+  color: rgb(210,210,210);
 }
 
 window {
-    font-family: Arial, Helvetica, sans-serif;
-    color:      rgba(217, 216, 216, 1);
-    background: rgba(35, 31, 32, 0.40);
+  font-family: Arial, Helvetica, sans-serif;
+  color:      rgba(217, 216, 216, 1);
+  background: rgba(35, 31, 32, 0.40);
 }
 
 window#waybar.solo {
-    color:      rgba(217, 216, 216, 1);
-    background: rgba(35, 31, 32, 0.85);
-}
-
-button:hover {
-    background: rgba(0,0,0,0.4)
+  color:      rgba(217, 216, 216, 1);
+  background: rgba(35, 31, 32, 0.85);
 }
 
 #workspaces {
-    margin: 0 5px;
+  margin:    0px 0px 0px 0px; 
+  padding:    0px 0px 0px 0px; 
 }
 
 #workspaces button {
-    padding:    0 5px;
-    color:      rgba(217, 216, 216, 0.4);
+  border-top: 3px solid rgba(217, 216, 216, 0);
+  min-width:  30px;
+  padding:    0px 3px 0px 3px; 
+}
+
+#workspaces button:hover {
+  border-top: 3px solid rgba(217, 216, 216, 1);
+  background: rgba(217, 216, 216, .2);
+  /* background: inherit; */
 }
 
 #workspaces button.visible {
-    color:      rgb(194, 58, 58);
+  /* color:      rgb(194, 58, 58); */ /* red */
 }
 
 #workspaces button.focused {
-    border-top: 3px solid rgba(217, 216, 216, 1);
-    border-bottom: 3px solid rgba(217, 216, 216, 0);
+  border-top: 3px solid rgba(217, 216, 216, 1);
+  /* border-bottom: 3px solid rgba(217, 216, 216, 0); */
 }
 
 #workspaces button.urgent {
-    color:      rgba(238, 46, 36, 1);
+  /* color:      rgba(238, 46, 36, 1); */
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
-    margin:     0px;
-    min-width:  100px;
-}
 
-#mode, #backlight, #idle_inhibitor, #language, #pulseaudio, #network, #memory, #temperature, #battery, #clock, #tray, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
-    /* color:      rgb(128,128,128); */
-    min-width:  40px;
-    padding-right: 7px;
-    padding-left: 7px;
-    /* margin-top: 5px; */
-    /* margin-bottom: 5px; */
-    /* border-right: 2px solid rgba(255,255,255, 0.4);  */
+#bluetooth, #mode, #cpu, #backlight, #idle_inhibitor, #language, #pulseaudio, #network, #memory, #temperature, #battery, #clock, #tray, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
+  /* color:      rgb(128,128,128); */
+  /* min-width:  40px; */
+  padding-right: 7px;
+  padding-left: 7px;
+  margin: 0px 0px 0px 0px;
+  /* margin-left: 3px; */
 }
 #clock {
-    border-right: none;
-    padding-right: 0pX;
+  border-right: none;
+  padding-right: 0px;
+  margin-right: 0px;
 }
 
-#clock {
-    margin:     0px 8px 0px 10px;
-    min-width:  120px;
+/* single icons: */
+#bluetooth, #idle_inhibitor, #tray {
+  /* min-width:  20px; */
+}
+
+#tray {
+  min-width: 40px;
+}
+
+#idle_inhibitor.activated {
+  color:       rgba(255, 210, 4, 1);
 }
 
 #battery.warning {
-   color:       rgba(255, 210, 4, 1);
+  color:       rgba(255, 210, 4, 1);
 }
 
 #battery.critical {
-    color:      rgba(238, 46, 36, 1);
+  color:      rgba(238, 46, 36, 1);
 }
 
 #battery.charging {
-    color:      rgba(217, 216, 216, 1);
+  color:      rgba(217, 216, 216, 1);
 }
 
 #custom-storage.warning {
-    color:      rgba(255, 210, 4, 1);
+  color:      rgba(255, 210, 4, 1);
 }
 
 #custom-storage.critical {
-    color:      rgba(238, 46, 36, 1);
+  color:      rgba(238, 46, 36, 1);
 }
