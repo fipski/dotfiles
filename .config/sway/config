@@ -1,4 +1,7 @@
-# Default config for sway
+# https://github.com/swaywm/sway/wiki -- gtk app take 20+s
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK# Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
@@ -134,10 +137,10 @@ input type:touch map_to_output DP-1
 
     # lock screen
     bindsym $mod+delete exec $lock
-    
+
     # clipman
     bindsym $mod+Insert exec clipman pick -t wofi
-    
+
     # clipman
     bindsym $mod+i exec wofi-emoji
 
@@ -182,21 +185,21 @@ set $ws9   9:9
 set $ws0   10:10
 set $wsF1  11:
 set $wsF2  12:󰙯
-set $wsF3  13:13
-set $wsF4  14:14
-set $wsF5  15:15
-set $wsF6  16:16
-set $wsF7  17:17
-set $wsF8  18:18
-set $wsF9  19:19
-set $wsF10 20:20
-set $wsF11 21:
+set $wsF3  13:F3
+set $wsF4  14:F4
+set $wsF5  15:F5
+set $wsF6  16:F6
+set $wsF7  17:F7
+set $wsF8  18:F8
+set $wsF9  19:F9
+set $wsF10 20:F10
+set $wsF11 21:F11
 set $wsF12 22:
 
 
 # Default workspaces for common programs
-assign [app_id="^Signal$"] workspace $wsF1
-assign [app_id="signal"] workspace $wsF1
+# assign [app_id="^Signal$"] workspace $wsF1
+# assign [app_id="signal"] workspace $wsF1
 # assign [class="Google-chrome"] workspace $ws1
 assign [class="Spotify"] workspace $wsF12
 assign [class="^Spotify$"] workspace $wsF12
@@ -205,8 +208,8 @@ assign [class="^Discord$"] workspace $wsF12
 for_window [title="nm_tui_win"] floating enable
 for_window [title="263ebf09-23ec-411c-981e-9e7728edb35a"] floating enable
 
-for_window [title="Spotify"] move to workspace $wsF12
-for_window [title="Signal"] move to workspace $wsF1
+# for_window [title="Spotify"] move to workspace $wsF12
+# for_window [title="Signal"] move to workspace $wsF1
 for_window [class="^discord$"] workspace $wsF2
 
 for_window [shell="^((?!xdg_shell).)*$"] title_format "%title :: %shell"
