@@ -40,41 +40,28 @@ output * bg /home/phil/.config/sway/mars-desert-satellite-8k-sj-3840x2160.jpg fi
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output eDP-1 scale 2
+# shifting the primary screen to the right causes weird issues with chrome / chromium
 # output eDP-1 pos 1920 0 res 3840x2160
 output eDP-1 pos 0 0 res 3840x2160
 output DP-1 pos 3840 0 res 1920x1080
 input type:tablet_tool map_to_output DP-1
 input type:touch map_to_output DP-1
-### Idle configuration
+
 # Idle configuration
 exec swayidle \
-         timeout 600 'exec $lock' \
-         timeout 1200 'swaymsg "output * dpms off"' \
-         resume 'swaymsg "output * dpms on"' \
-         timeout 1800 'systemctl suspend-then-hibernate' \
-         after-resume 'swaymsg "output * dpms on"' \
-         before-sleep 'exec $lock'
-
-# exec swayidle -w \
-#            timeout 300 'swaylock -f -c 000000' \
-#            timeout 600 'swaymsg "output * dpms off"' \
-#            resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -c 000000'
+       timeout 600 '[ "$(cat /sys/class/power_supply/AC/online)" = "0" ] && brightnessctl -s; brightnessctl set 100-' \
+       resume 'brightnessctl -r' \
+       timeout 800 'exec $lock' \
+       timeout 1200 'swaymsg "output * dpms off"' \
+       resume 'swaymsg "output * dpms on"' \
+       timeout 1800 '[ "$(cat /sys/class/power_supply/AC/online)" = "0" ] && systemctl suspend-then-hibernate' \
+       resume 'swaymsg "output * dpms on"' \
+       before-sleep 'exec $lock'
 
 # store clipboard to clipman
 exec wl-paste -t text --watch clipman store --no-persist
 
 
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 30 'swaylock -f -c 000000' \
-#          timeout 60 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
 #
