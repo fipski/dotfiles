@@ -54,6 +54,9 @@ window#waybar.solo {
   /* color:      rgba(238, 46, 36, 1); */
 }
 
+#window{
+  margin-left: 5px;
+}
 
 #bluetooth, #mode, #cpu, #backlight, #idle_inhibitor, #language, #pulseaudio, #network, #memory, #temperature, #battery, #clock, #tray, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
   /* color:      rgb(128,128,128); */

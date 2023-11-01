@@ -24,21 +24,19 @@ source $ZSH_POWER_LEVEL_THEME/powerlevel10k.zsh-theme
 setfont /usr/share/kbd/consolefonts/ter-powerline-v32b.psf.gz 2>/dev/null
 
 plugins=(archlinux 
-	bundler 
-	docker 
-	jsontools 
-	vscode
-    web-search 
-	# tig 
-	gitfast 
-	vi-mode
-	colored-man-pages
-	colorize 
-	command-not-found 
-	cp 
-	dirhistory 
-	# sudo
-	) 
+  docker 
+  jsontools 
+  vscode
+  # tig 
+  gitfast 
+  vi-mode
+  colored-man-pages
+  colorize 
+  command-not-found 
+  cp 
+  dirhistory 
+  # sudo
+  ) 
 # /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
 
 source $ZSH/oh-my-zsh.sh
@@ -53,6 +51,8 @@ fi
 
 # source $ZSH/oh-my-zsh.sh
 # source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+COMPLETION_WAITING_DOTS="true"
 
 bindkey  "^[[1~"   beginning-of-line
 bindkey  "^[[4~"   end-of-line
@@ -82,3 +82,5 @@ decode_jwt () {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -d /opt/rv32imfc/bin ] && export PATH="${PATH}:/opt/rv32imfc/bin"

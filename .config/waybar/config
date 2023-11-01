@@ -40,10 +40,10 @@
     "format-disconnected": "Disconnected {icon}",
     "format-alt-click": "click-right",
     "format-icons": {
-      "_wifi": ["", "" ,""],
+      "_wifi": ["󰤟", "󰤢" ,"󰤥","󰤨"],
       "wifi": ["󰢿","󰢼", "󰢽", "󰢾"],
-      "ethernet": [""],
-      "wwan": [""],
+      "ethernet": ["󰈀"],
+      "wwan": ["m"],
       "disconnected": [""]
     },
     "on-click": "alacritty --config-file=/dev/null -t nm_tui_win -e nmtui",
@@ -71,6 +71,7 @@
   },
   "bluetooth": {
     "format": "{icon}",
+    "format-disabled": "{icon}",
     "_format-alt": "bluetooth: {status}",
     "interval": 30,
     "format-icons": {
