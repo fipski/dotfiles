@@ -2,6 +2,8 @@
 local M = {}
 M.disabled = {
   n = {
+    ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
+    ["<leader>rn"] = { "<cmd> set nu! <CR>", "Toggle line number" },
     ["<leader>/"] = "",
     ["<leader>wk"] = "",
     -- ["gD"] = {
