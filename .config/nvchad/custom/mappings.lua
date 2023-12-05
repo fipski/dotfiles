@@ -50,9 +50,9 @@ M.disabled = {
 
     ["<leader>ra"] = {
       function()
-        require("nvchad_ui.renamer").open()
+        require("nvchad.renamer").open()
       end,
-      "lsp rename",
+      "LSP rename",
     },
 
     ["<leader>ca"] = {
@@ -248,7 +248,7 @@ M.lspconfig = {
 
     ["<leader>lr"] = {
       function()
-        require("nvchad_ui.renamer").open()
+        require("nvchad.renamer").open()
       end,
       "lsp rename",
     },

@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "pyright", "rust_analyzer" }
+local servers = { "html", "cssls", "tsserver", "clangd", "pyright", "rust_analyzer", "texlab" }
 
 -- add words from spell custom dict to ltex dict
 local path_de_dict = vim.fn.stdpath("config") .. "/spell/de.utf-8.add"
