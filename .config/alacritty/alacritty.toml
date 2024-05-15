@@ -1,6 +1,6 @@
 live_config_reload = true
 
-import = ["~/.config/alacritty/terminal-sexy.yaml"]
+import = ["~/.config/alacritty/theme.toml"]
 
 # [selection]
 # save_to_clipboard = true

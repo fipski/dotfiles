@@ -36,7 +36,8 @@ plugins=(archlinux
   colorize 
   command-not-found 
   cp 
-  dirhistory 
+  z
+  # dirhistory 
   # sudo
   ) 
 # /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
