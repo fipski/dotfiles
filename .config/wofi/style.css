@@ -5,6 +5,7 @@ outline-style: none;
 box-shadow: none;
 text-shadow: none;
 font-size: 15px;
+font-family: "Hack Nerd Font";
 }
 
 window {
@@ -17,9 +18,9 @@ background: rgba(30, 30, 30, 0.92);
 }
 
 #input {
-margin: 5px;
+margin: 10px;
 border: none;
-border-radius: 0px;
+border-radius: 4px;
 color: #fff;
 background-color: #333;
 }
@@ -29,7 +30,7 @@ background-color: #333;
 }
 
 #inner-box {
-margin: 5px;
+margin: 10px;
 border: none;
 /* background-color: #282a36; */
 color:      rgba(217, 216, 216, 1);
@@ -37,14 +38,15 @@ color:      rgba(217, 216, 216, 1);
 }
 
 #outer-box {
-margin: 5px;
-border: none;
+/* margin: 5px; */
+border: 2px solid rgba(110, 00, 99, 60);
+border-radius: 5px
 /* background-color: #fff; */
 /* background: rgba(35, 31, 32, 0.40); */
 }
 
 #scroll {
-margin: 0px;
+margin: 5px;
 border: none;
 }
 

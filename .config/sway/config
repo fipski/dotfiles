@@ -78,10 +78,9 @@ exec wl-paste -t text --watch clipman store --no-persist
 # Read `man 5 sway-input` for more information about this section.
 
 input type:keyboard {
-    xkb_layout "de"
-    xkb_variant "nodeadkeys"
-    #xkb_variant "colemak,,typewriter"
-    #xkb_options "grp:win_space_toggle"
+    xkb_layout "eu"
+    # xkb_layout "du"
+    # xkb_variant "nodeadkeys"
 }
 
 input "2:10:TPPS/2_Elan_TrackPoint" {
