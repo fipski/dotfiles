@@ -13,7 +13,7 @@ ignore-timeout=1
 # font=monospace 12
 
 [urgency=low]
-border-color=#cccccc
+border-color=#88c0d0
 
 [urgency=normal]
 border-color=#d08770

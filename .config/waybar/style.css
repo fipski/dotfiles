@@ -70,11 +70,6 @@ window#waybar {
   padding: 0 7px;
   margin: 0px 0px 0px 0px;
 }
-#clock {
-  border-right: none;
-  padding-right: 0px;
-  margin-right: 0px;
-}
 
 
 #idle_inhibitor.activated {

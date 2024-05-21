@@ -2,7 +2,7 @@
   "layer": "bottom",
     "position": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-right": ["custom/spotify", "custom/storage", "backlight", "pulseaudio", "cpu", "battery", "network", "bluetooth", "idle_inhibitor", "tray", "clock"],
+    "modules-right": ["custom/spotify", "custom/storage", "backlight", "pulseaudio", "cpu", "battery", "network", "bluetooth", "idle_inhibitor", "tray", "clock", "custom/powermenu"],
     "hyprland/workspaces": {
       "format": "{icon}",
       "disable-scroll": true,
@@ -15,9 +15,20 @@
         "6": "6",
         "7": "7",
         "8": "8",
-        "9": "󰎛",
-        "10": "",
-        "11": ""
+        "9": "9",
+        "10": "10",
+        "11": "11",
+        "12": "12",
+        "13": "13",
+        "14": "14",
+        "15": "15",
+        "16": "16",
+        "17": "17",
+        "18": "18",
+        "19": "󰊻",
+        "20": "󰻞",
+        "21": "󰎛",
+        "22": "󰓇",
       },
     },
     "hyprland/window": {
@@ -62,9 +73,7 @@
       "tooltip": false
     },
     "pulseaudio": {
-      "format-alt": "{icon}",
       "format": "{volume} {icon}",
-      "format-alt-click": "click-right",
       "format-muted": "󰝟",
       "format-icons": {
         "phone": [" ", " ", " "],
@@ -74,23 +83,20 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "_default": ["", "", "", ""],
         "default": ["", "", ""]
       },
       "scroll-step": 10,
-      "on-click": "pavucontrol",
+      "on-click": "pkill pavucontrol; pavucontrol",
       "tooltip": false
     },
     "bluetooth": {
       "format": "{icon}",
       "format-disabled": "{icon}",
-      "_format-alt": "bluetooth: {status}",
       "interval": 30,
       "format-icons": {
         "enabled": "",
         "disabled": "󰂲"
       },
-      "_tooltip-format": "{status}",
       "tooltip": false
     },
     "custom/spotify": {
@@ -103,7 +109,7 @@
     },
     "custom/storage": {
       "format": "{} 󰋊",
-      "format-alt": "{percentage}% ",
+      "format-alt": "{percentage}% 󰋊",
       "format-alt-click": "click-right",
       "return-type": "json",
       "interval": 180,
@@ -141,5 +147,9 @@
       "tooltip-format": "{title}",
       "on-click": "activate",
       "on-click-middle": "close"
-    }
+    },
+    "custom/powermenu": {
+      "format": "󰐥",
+      "on-click": "~/.config/waybar/modules/wofi-powermenu.sh"
+    },
 }
