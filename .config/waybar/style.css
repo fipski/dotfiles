@@ -1,7 +1,5 @@
 * {
   border:        none;
-  /* border-radius: 0; */
-  /* font-family: Roboto, Helvetica, sans-serif, "Font Awesome 5 Free Solid", "Font Awesome 5 Brands"; */
   font-family: "NotoSans Nerd Font";
   font-size:     15px;
   color: rgb(210,210,210);
@@ -9,10 +7,6 @@
   padding: 0;
 }
 
-/* window { */
-  /* color:      rgba(217, 216, 216, 1); */
-  /* background: rgba(35, 31, 32, 0.40); */
-/* } */
 
 window#waybar {
   /* color:      rgba(217, 216, 216, 1); */
@@ -21,9 +15,6 @@ window#waybar {
 }
 
 #workspaces {
-  /* margin:    0px 0px 0px 0px;  */
-  /* padding:    0px 0px 0px 0px;  */
- /* background: rgba(26, 27, 38, 0.6); */
   padding: 0;
   border-radius: 0px;
   border: 0;
@@ -31,25 +22,21 @@ window#waybar {
 }
 
 #workspaces button {
-  /* 33ccffee */
-  /* border-top: 2px solid rgba(217, 216, 216, 0); */
+  /* hidden border */
   border-bottom: 2px solid rgba(33, 204, 255, 0);
   min-width:  25px;
   border-radius: 0;
   padding:    0px; 
-  padding-top: 0px;
   padding-bottom: 2px;
 }
 
 #workspaces button:hover {
-  /* border-top: 2px solid rgba(33, 204, 255, 0.9); */
   border-bottom: 2px solid rgba(190, 6, 211, 0.9);
   border-radius: 0;
   background: none;
   padding-top: 0px;
   padding-bottom: 2px;
 }
-
 
 #workspaces button.active {
   border-bottom: 2px solid rgba(33, 204, 255, 0.9);
@@ -64,24 +51,12 @@ window#waybar {
 
 #window{
   margin-left: 5px;
+  padding-bottom: 3px;
 }
 
-#bluetooth, #mode, #cpu, #backlight, #idle_inhibitor, #language, #pulseaudio, #network, #memory, #temperature, #battery, #clock, #tray, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
-  padding: 0 7px;
-  margin: 0px 0px 0px 0px;
-}
-
-
-#idle_inhibitor.activated {
-  color:       rgba(255, 210, 4, 1);
-}
-
-#battery.warning {
-  color:       rgba(255, 210, 4, 1);
-}
-
-#battery.critical {
-  color:      rgba(238, 46, 36, 1);
+#bluetooth, #mode, #cpu, #backlight, #idle_inhibitor, #language, #pulseaudio, #network, #memory, #temperature, #battery, #clock, #tray, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #custom-hypridle, #custom-powermenu {
+  padding: 0 7px 3px 7px;
+  margin: 0px;
 }
 
 #battery.charging {
@@ -92,6 +67,10 @@ window#waybar {
   color:      rgba(255, 210, 4, 1);
 }
 
-#custom-storage.critical {
+.warning {
+  color:      rgba(255, 210, 4, 1);
+}
+
+.critical {
   color:      rgba(238, 46, 36, 1);
 }

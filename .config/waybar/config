@@ -2,7 +2,7 @@
   "layer": "bottom",
     "position": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-right": ["custom/spotify", "custom/storage", "backlight", "pulseaudio", "cpu", "battery", "network", "bluetooth", "idle_inhibitor", "tray", "clock", "custom/powermenu"],
+    "modules-right": ["custom/spotify", "custom/storage", "backlight", "pulseaudio", "cpu", "battery", "network", "bluetooth", "custom/hypridle", "tray", "clock", "custom/powermenu"],
     "hyprland/workspaces": {
       "format": "{icon}",
       "disable-scroll": true,
@@ -106,6 +106,17 @@
       "exec-if": "pgrep spotify",
       "escape": true,
       "on-click": "playerctl play-pause"
+    },
+    "custom/hypridle": {
+      "format": "{icon}",
+      "asdformat-icons": ["", "", "", "", "", "", "", "", ""],
+      "format-icons": ["󱫧", "󱫑"],
+      "interval": "once",
+      "signal": 8,
+      "return-type": "json",
+      "escape": true,
+      "exec": "~/.config/waybar/modules/hypridle.sh",
+      "on-click": "~/.config/waybar/modules/hypridle.sh -t; pkill -SIGRTMIN+8 waybar"
     },
     "custom/storage": {
       "format": "{} 󰋊",
