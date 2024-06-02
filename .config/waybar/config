@@ -105,7 +105,7 @@
       "exec": "~/.config/waybar/modules/spotify.sh",
       "exec-if": "pgrep spotify",
       "escape": true,
-      "on-click": "playerctl play-pause"
+      "on-click": "playerctl play-pause --player=spotify"
     },
     "custom/hypridle": {
       "format": "{icon}",
