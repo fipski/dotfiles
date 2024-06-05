@@ -41,10 +41,13 @@ M.mason = {
     "clang-format",
 
     -- latex, markdown
-    "ltex",
+    "ltex-ls",
 
     -- python
     "pyright",
+    "ruff",
+    "mypy",
+    "black",
 
     -- rust
     "rust-analyzer",

@@ -317,37 +317,12 @@ M.lspconfig = {
     },
 
     ["<leader>ll"] = {
-      function()
+     function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end,
       "list workspace folders",
     },
   }
 }
-
-M.nvterm = {
-  plugin = true,
-
-  t = {
-    -- toggle in terminal mode
-    ["<A-cr>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "Toggle horizontal term",
-    },
-  },
-
-  n = {
-    -- toggle in normal mode
-    ["<A-cr>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "Toggle horizontal term",
-    },
-  },
-}
-
 
 return M
