@@ -2,7 +2,7 @@
   "layer": "bottom",
     "position": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-right": ["custom/spotify", "custom/storage", "backlight", "pulseaudio", "cpu", "battery", "network", "bluetooth", "custom/hypridle", "tray", "clock", "custom/powermenu"],
+    "modules-right": ["custom/spotify", "custom/storage", "backlight", "pulseaudio#sink", "pulseaudio#mic", "cpu", "battery", "network", "bluetooth", "custom/hypridle", "tray", "clock", "custom/powermenu"],
     "hyprland/workspaces": {
       "format": "{icon}",
       "disable-scroll": true,
@@ -72,7 +72,7 @@
       "on-click": "alacritty --config-file=/dev/null -t nm_tui_win -e nmtui",
       "tooltip": false
     },
-    "pulseaudio": {
+    "pulseaudio#sink": {
       "format": "{volume} {icon}",
       "format-muted": "󰝟",
       "format-icons": {
@@ -83,10 +83,20 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": ["", "", ""]
+        "default": ["", "", ""],
       },
       "scroll-step": 10,
-      "on-click": "pkill pavucontrol; pavucontrol",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right": "pkill pavucontrol; pavucontrol",
+      "tooltip": false
+    },
+    "pulseaudio#mic": {
+      "format": "{format_source}",
+      "format-source": "{volume} ",
+      "format-source-muted": "",
+      "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+      "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+      "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
       "tooltip": false
     },
     "bluetooth": {
